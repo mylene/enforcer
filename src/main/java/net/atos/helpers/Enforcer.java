@@ -24,7 +24,7 @@ public class Enforcer {
                     groupArtifact = StringUtils.substringBefore(groupArtifact, "paths to dependency are:");
                     groupArtifact = StringUtils.substringBeforeLast(groupArtifact, ":");
                     if (!setModule) {
-                        System.out.println("<excludes>" + groupArtifact + "</excludes>");
+                        System.out.println("<exclude>" + groupArtifact + "</exclude>");
                     }
                 }
                 if (setModule && line.startsWith("+-")) {
