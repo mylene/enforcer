@@ -10,7 +10,7 @@ public class Enforcer {
     public static void main(String[] args) {
         String fileName = "C:/Users/mreiners/Downloads/enforcer.log";
         System.out.println("Enforcer excludes needed:");
-        System.out.println("------------------------");
+        System.out.println("-------------------------");
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line = reader.readLine();
             boolean setModule = false;
