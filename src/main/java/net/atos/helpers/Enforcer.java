@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 public class Enforcer {
     public static void main(String[] args) {
         String fileName = "C:/Users/mreiners/Downloads/enforcer.log";
-        System.out.println("Enforcer exludes needed:");
+        System.out.println("Enforcer excludes needed:");
         System.out.println("------------------------");
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line = reader.readLine();
