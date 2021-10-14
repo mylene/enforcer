@@ -16,10 +16,10 @@ public class Enforcer {
             boolean setModule = false;
             String groupArtifact = "";
             while (line != null) {
-                if (line.startsWith("Failed while enforcing RequireUpperBoundDeps")) {
+                if (line.contains("Failed while enforcing RequireUpperBoundDeps")) {
                     setModule = true;
                 }
-                if (line.startsWith("Require upper bound dependencies error for ")) {
+                if (line.contains("Require upper bound dependencies error for ")) {
                     groupArtifact = StringUtils.substringAfter(line, "Require upper bound dependencies error for ");
                     groupArtifact = StringUtils.substringBefore(groupArtifact, "paths to dependency are:");
                     groupArtifact = StringUtils.substringBeforeLast(groupArtifact, ":");
@@ -27,7 +27,7 @@ public class Enforcer {
                         System.out.println("<exclude>" + groupArtifact + "</exclude>");
                     }
                 }
-                if (setModule && line.startsWith("+-")) {
+                if (setModule && line.contains("+-")) {
                     String module = StringUtils.substringAfter(line, "+-");
                     module = StringUtils.substringBeforeLast(module, ":");
                     System.out.println("\nFor module: " + module);
